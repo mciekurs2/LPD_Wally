@@ -1,64 +1,68 @@
 package mciekurs.com.wally
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.ViewPager
+import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
+import android.view.MenuItem
+import android.view.View
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
-import mciekurs.com.wally.fragments.FragmentAdapter
-import mciekurs.com.wally.fragments.ImageFragment
-import mciekurs.com.wally.fragments.UserFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupViewPager()
-        setupItemSelect()
-        setupPageListener()
+        mAuth = FirebaseAuth.getInstance()
 
+        //uzstāda toolbar
+        setSupportActionBar(toolbar_main)
+        navigationView_main.setNavigationItemSelectedListener(this)
+
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp)
+        }
 
     }
 
-    private fun setupViewPager(){
-        val adapter = FragmentAdapter(supportFragmentManager)
-        viewPager_mainActivity.adapter = adapter
-        adapter.addFragment(UserFragment())
-        adapter.addFragment(ImageFragment())
-        adapter.addFragment(UserFragment())
-        adapter.notifyDataSetChanged()
-    }
-
-    private fun setupItemSelect(){
-        bottom_navigation.setOnNavigationItemSelectedListener {
-            when (it.itemId){
-                R.id.item_home -> {
-                    viewPager_mainActivity.currentItem = 0
-                }
-                R.id.item_images -> {
-                    viewPager_mainActivity.currentItem = 1
-                }
-                R.id.item_profile -> {
-                    viewPager_mainActivity.currentItem = 2
-                }
-            }
-            return@setOnNavigationItemSelectedListener false
+    override fun onStart() {
+        super.onStart()
+        if (mAuth.currentUser == null){
+            startActivity(Intent(applicationContext, LoginActivity::class.java))
+            finish()
         }
     }
 
-    private fun setupPageListener(){
-        viewPager_mainActivity.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrollStateChanged(state: Int) {}
-
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
-
-            override fun onPageSelected(position: Int) {
-                bottom_navigation.menu.getItem(position).isChecked = true
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            android.R.id.home -> {
+                drawerLayout_main.openDrawer(GravityCompat.START)
+                true
             }
-
-
-        })
+            else -> super.onOptionsItemSelected(item)
+        }
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.item_logout -> {
+                drawerLayout_main.closeDrawer(GravityCompat.START)
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
+                finish()
+                mAuth.signOut()
+                true
+            }
+            else -> return true
+        }
+    }
+
+
 
 }

@@ -9,5 +9,17 @@
     <string name="itemImage_text">Images</string>
     <string name="itemProfile_text">Profile</string>
 
+    <!--Login/Register screen-->
+    <string name="hint_email">email@example.com</string>
+    <string name="hint_password">password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="text_registerClick">Don\'t have account? Click here</string>
+    <string name="text_loginClick">Already have account? Click here</string>
+
+    <!--Drawer menu-->
+    <string name="text_profile">Profile</string>
+    <string name="text_logout">Logout</string>
+
 
 </resources>
