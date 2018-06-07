@@ -18,8 +18,17 @@
     <string name="text_loginClick">Already have account? Click here</string>
 
     <!--Drawer menu-->
+    <string name="text_userImages">Your Images</string>
     <string name="text_profile">Profile</string>
     <string name="text_logout">Logout</string>
+
+    <!--UserImages screen-->
+    <string name="text_takePicture">Take Picture</string>
+    <string name="text_uploadPicture">Upload Picture</string>
+    <string name="hint_title">Enter title</string>
+    <string name="hint_extra_bio">Enter extra bio here</string>
+    <string name="ok">Upload</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

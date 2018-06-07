@@ -33,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         if(mAuth?.currentUser != null){
             startActivity(Intent(applicationContext, MainActivity::class.java))
+            finish()
         }
     }
 

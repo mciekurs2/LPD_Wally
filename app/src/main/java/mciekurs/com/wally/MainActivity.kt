@@ -59,6 +59,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 mAuth.signOut()
                 true
             }
+            R.id.item_userImages -> {
+                drawerLayout_main.closeDrawer(GravityCompat.START)
+                startActivity(Intent(applicationContext, UserImagesActivity::class.java))
+                true
+            }
             else -> return true
         }
     }
