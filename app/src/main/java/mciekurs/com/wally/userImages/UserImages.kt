@@ -1,4 +1,4 @@
-package mciekurs.com.wally
+package mciekurs.com.wally.userImages
 
 import com.google.firebase.database.IgnoreExtraProperties
 

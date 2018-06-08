@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Wally</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!--Menu nosaukumi-->
     <string name="itemHome_text">Home</string>
     <string name="itemImage_text">Images</string>
@@ -16,6 +13,7 @@
     <string name="text_register">Register</string>
     <string name="text_registerClick">Don\'t have account? Click here</string>
     <string name="text_loginClick">Already have account? Click here</string>
+    <string name="hint_displayName">display name</string>
 
     <!--Drawer menu-->
     <string name="text_userImages">Your Images</string>
@@ -30,6 +28,17 @@
     <string name="ok">Upload</string>
     <string name="cancel">Cancel</string>
     <string name="remove">Remove</string>
+
+    <!--Profile screen-->
+    <string name="nickname">Name:</string>
+    <string name="hint_nickname">display name</string>
+    <string name="email">Email:</string>
+    <string name="hint_email_profile">email@example.com</string>
+    <string name="new_password">New Pass:</string>
+    <string name="hint_new_password">password</string>
+    <string name="update">Update</string>
+    <string name="back">Back</string>
+
 
 
 </resources>

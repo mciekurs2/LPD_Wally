@@ -1,4 +1,4 @@
-package mciekurs.com.wally
+package mciekurs.com.wally.auth
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Patterns
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
+import mciekurs.com.wally.mainImages.MainActivity
+import mciekurs.com.wally.R
 import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {

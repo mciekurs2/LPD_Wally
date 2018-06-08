@@ -1,4 +1,4 @@
-package mciekurs.com.wally
+package mciekurs.com.wally.userImages
 
 import android.app.Dialog
 import android.content.Context
@@ -10,10 +10,10 @@ import android.view.Window
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.dialog_image_edit.*
 import kotlinx.android.synthetic.main.single_layout_images.view.*
+import mciekurs.com.wally.R
 import org.jetbrains.anko.toast
 
 class UserImageAdapter(private val images: ArrayList<UserImages>): RecyclerView.Adapter<UserImageAdapter.CustomViewHolder>() {
@@ -28,9 +28,6 @@ class UserImageAdapter(private val images: ArrayList<UserImages>): RecyclerView.
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val images = images[position]
-
-        val options = RequestOptions()
-        options.fitCenter().centerCrop()
 
         holder.view.textView_title.text = images.title
         holder.view.textView_bio.text = images.bio

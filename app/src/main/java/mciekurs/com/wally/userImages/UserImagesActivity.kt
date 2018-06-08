@@ -1,4 +1,4 @@
-package mciekurs.com.wally
+package mciekurs.com.wally.userImages
 
 import android.app.Dialog
 import android.content.Intent
@@ -8,19 +8,17 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.support.v4.content.FileProvider
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Window
-import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_user_images.*
-import kotlinx.android.synthetic.main.dialog_image_edit.*
 import kotlinx.android.synthetic.main.dialog_image_upload.*
+import mciekurs.com.wally.R
 import org.jetbrains.anko.toast
 import java.io.File
 import java.io.IOException
@@ -66,7 +64,6 @@ class UserImagesActivity : AppCompatActivity() {
         val manager = LinearLayoutManager(this)
         recyclerView_userImages.layoutManager = manager
         recyclerView_userImages.adapter = adapter
-
     }
 
     private fun getUserImages(){
