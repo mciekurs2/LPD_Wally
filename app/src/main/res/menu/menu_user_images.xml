@@ -8,7 +8,7 @@
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/item_uploadPicture"
+        android:id="@+id/item_getPicture"
         android:title="@string/text_uploadPicture"
         android:icon="@drawable/ic_create_new_folder_black_24dp"
         app:showAsAction="ifRoom"/>

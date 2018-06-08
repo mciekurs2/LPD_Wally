@@ -29,6 +29,7 @@
     <string name="hint_extra_bio">Enter extra bio here</string>
     <string name="ok">Upload</string>
     <string name="cancel">Cancel</string>
+    <string name="remove">Remove</string>
 
 
 </resources>
