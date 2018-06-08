@@ -65,7 +65,6 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
 
